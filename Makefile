@@ -17,13 +17,14 @@ format:
 		-o -name '*.hpp' -o -name '*.hh' -o -name '*.h')
 
 cmake-load:
-	cd build;cmake ..
+	cd build;cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+	ln -sf build/compile_commands.json compile_commands.json
 
 cmake-build:
 	cd build;cmake --build . --target $(project)
 
 clean:
-	rm -rf build
+	rm -rf .cache build compile_commands.json
 
 exec:
 	./build/$(project)
