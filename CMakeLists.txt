@@ -22,6 +22,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_HEADERS_DIR})
 
 target_link_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/lib)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
+# add raylib to executable
+# target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/lib/libraylib.a)
 
 target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Werror)
