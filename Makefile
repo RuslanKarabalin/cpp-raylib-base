@@ -6,7 +6,7 @@ run: reload exec
 
 build: mkdir-build format cmake-load cmake-build
 
-reload: format cmake-load cmake-build
+reload: cmake-load cmake-build
 
 mkdir-build:
 	[ -d ./build ] | mkdir -p build
