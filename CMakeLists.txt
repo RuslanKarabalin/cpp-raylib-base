@@ -8,8 +8,9 @@ project(
 )
 
 set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(PROJECT_HEADERS_DIR ${PROJECT_SOURCE_DIR}/include)
 set(PROJECT_SOURCES_DIR ${PROJECT_SOURCE_DIR}/src)
@@ -22,7 +23,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE ${PROJECT_HEADERS_DIR})
 
 target_link_directories(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/lib)
 
-# add raylib to executable
+# add link to raylib in current directory
+target_link_libraries(${PROJECT_NAME} PRIVATE raylib)
+# or add raylib to executable
 # target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/lib/libraylib.a)
 
 target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Werror)

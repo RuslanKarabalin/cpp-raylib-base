@@ -17,7 +17,7 @@ format:
 		-o -name '*.hpp' -o -name '*.hh' -o -name '*.h')
 
 cmake-load:
-	cd build;cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+	cd build;cmake ..
 	ln -sf build/compile_commands.json compile_commands.json
 
 cmake-build:
