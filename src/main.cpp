@@ -1,4 +1,4 @@
-#include "raylib.h"
+#include <raylib.h>
 
 static int WINDOW_WIDTH = 1600;
 static int WINDOW_HEIGHT = 900;

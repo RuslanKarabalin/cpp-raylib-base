@@ -4,7 +4,7 @@ all: build exec
 
 run: reload exec
 
-build: mkdir-build format cmake-load cmake-build
+build: mkdir-build cmake-load cmake-build
 
 reload: cmake-load cmake-build
 
@@ -13,8 +13,8 @@ mkdir-build:
 
 format:
 	clang-format -i $$(find src include \
-		-name '*.cpp' -o -name '*.cc' -o -name '*.c' \
-		-o -name '*.hpp' -o -name '*.hh' -o -name '*.h')
+		-name '*.cpp' -o -name '*.hpp' \
+		-o -name '*.c' -o -name '*.h')
 
 cmake-load:
 	cd build;cmake ..
